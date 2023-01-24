@@ -4,14 +4,37 @@ import "./button.css"
 
 export default {
     title: "Button", 
-    component: Button, 
+    argTypes: {
+        backgroundColor:{
+            control:"color"
+            },
+        },
+        onClick: {
+            table: {
+                category: "Events",
+            },
+        },
+        size:{
+            table: {
+                category: "Sizes"
+            },
+        },
+    label: "Do Something", 
+    }
+
+const Template = (args) => <Button {...args} />
+
+export const Primary = Template.bind ({}); 
+Primary.args = {
+    primary: true,
+    label: "Do Something",
+    backgroundColor: "", 
+    size: "medium", 
 }
 
-const Template = args => <Button {...args} />
-
-
-export const Primary = () => Template.bind({})
-export const Danger = () => <Button label = "danger" backgroundColor = "red"/>
-export const Success = () => <Button label = "success" backgroundColor = "green" />
-export const Warning = () => <Button label = "Warning" backgroundColor = "yellow"/>
-export const Default = () => <Button label = "Default" background Color ="black" />
+export const Danger = Template.bind({}); 
+Danger.args = {
+    danger: true,   
+    label: "Do Something", 
+    color: ""
+}
