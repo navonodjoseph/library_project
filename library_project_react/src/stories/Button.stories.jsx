@@ -6,7 +6,7 @@ export default {
     title: "Button", 
     component: Button,
     argTypes:  {
-        onClick: {action: "onClick"}, 
+        onClick: {action: "you clicked me"}, 
     },
     fontcolor: "white", 
 }
